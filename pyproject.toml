@@ -1,0 +1,29 @@
+[project]
+name = "routerdc"
+version = "0.1.0"
+description = "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models"
+requires-python = ">=3.8"
+dependencies = [
+    "transformers>=4.30",
+    "tqdm>=4.65",
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "torch",
+    "torchvision",
+    "tiktoken",
+    "protobuf",
+    "sentencepiece",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
